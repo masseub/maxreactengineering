@@ -8,6 +8,8 @@ const t = content[lang];
 const contact = t.contactData;
 const mailto = `mailto:${contact.email}?subject=Projet%20proc%C3%A9d%C3%A9%20-%20MaxReact`;
 const tel = `tel:${contact.phone.replace(/\\s+/g, '')}`;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1) : path}`;
 ---
 
 <PageShell lang={lang} t={t} meta={t.meta}>
@@ -29,7 +31,7 @@ const tel = `tel:${contact.phone.replace(/\\s+/g, '')}`;
         <a class="btn btn-secondary" href={t.hero.secondaryAnchor}>{t.hero.secondaryCta}</a>
       </div>
       <div class="flex items-center gap-3 pt-1">
-        <img src="/logo.png" alt="Logo MaxReact Engineering" class="h-11 w-11" />
+        <img src={withBase('logo.png')} alt="Logo MaxReact Engineering" class="h-11 w-11" />
         <p class="text-sm text-slate-500">{contact.company} — {t.hero.label}</p>
       </div>
     </div>
@@ -69,7 +71,7 @@ const tel = `tel:${contact.phone.replace(/\\s+/g, '')}`;
       <p class="text-sm text-slate-500">{t.about.caption}</p>
     </div>
     <div class="card overflow-hidden max-w-[360px] w-full mx-auto md:mx-0 md:justify-self-end md:self-center">
-      <img src="/profile.jpg" alt={`Portrait de ${contact.name}`} class="w-full h-auto object-cover" />
+      <img src={withBase('profile.jpg')} alt={`Portrait de ${contact.name}`} class="w-full h-auto object-cover" />
     </div>
   </section>
 
