@@ -1,43 +1,38 @@
-# Astro Starter Kit: Minimal
+# MaxReact Engineering – landing page (Astro + Tailwind)
+- Bilingual static site for a chemical process engineering consultancy: `/fr/` (default) and `/en/`. The root route `/` redirects to `/fr/`.
+- Stack: Astro 5, Tailwind CSS (v4), no client-side framework; fully static and GitHub Pages ready.
+- Assets: `public/logo.png` (brand mark) and `public/profile.jpg` (consultant portrait). Keep their filenames unchanged.
+- Content sources: copy is centralized in `src/data/content.ts`. Layout shell lives in `src/layouts/PageShell.astro`; page bodies are in `src/pages/fr/index.astro` and `src/pages/en/index.astro`.
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## Installer et lancer en local
+- Pré-requis : Node.js 20+.
+- Installer les dépendances : `npm install`
+- Développement : `npm run dev` puis ouvrir http://localhost:4321 (hot reload bilingue).
+- Build de production : `npm run build` (sortie dans `dist/`).
+- Prévisualisation du build : `npm run preview`.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Structure de l’architecture
+- `src/pages/index.astro` : redirection permanente vers `/fr/`.
+- `src/pages/fr/` et `src/pages/en/` : landing page FR et EN.
+- `src/data/content.ts` : textes, méta et coordonnées FR/EN. Modifier ici pour toute mise à jour de contenu ou SEO.
+- `src/layouts/PageShell.astro` : header + language switcher, meta tags (title/description/OG/Twitter), footer.
+- `src/styles/global.css` : Tailwind import + variables globales, styles boutons, cartes, etc.
+- `public/` : favicon(s) + logo + photo (aucun build ou transformation).
 
-## 🚀 Project Structure
+## Déploiement GitHub Pages (manuel)
+1) Renseigner l’URL publique dans `astro.config.mjs` avant le build, par exemple :
+   - `site: 'https://votre-utilisateur.github.io/votre-repo'`
+   - si le repo n’est pas user/organization page, ajouter `base: '/votre-repo'`.
+2) Builder : `npm run build`.
+3) Publier le dossier `dist/` vers la branche `gh-pages` (exemple : `git subtree push --prefix dist origin gh-pages` ou workflow GitHub Actions standard Astro).
+4) Activer Pages sur la branche `gh-pages` dans les settings du dépôt.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Notes contenu / SEO
+- Titres et descriptions distincts FR et EN via `t.meta` dans `src/data/content.ts` (OpenGraph et Twitter meta inclus).
+- Changement de langue via FR | EN dans le header ; l’alternate hreflang est pré-configuré.
+- Message central “From lab to plant” visible en hero, header et carte rôle.  
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Contact affiché sur le site
+- Nom : Maximilien Richald — Entreprise : MaxReact Engineering
+- Téléphone : +32 496 08 43 43 — Email : maximilien.richald@outlook.com
+- Localisation : Genappe, Belgique — LinkedIn : https://be.linkedin.com/in/maximilienrichald-process-quality

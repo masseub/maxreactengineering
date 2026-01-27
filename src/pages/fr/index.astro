@@ -1,0 +1,196 @@
+---
+import PageShell from '../../layouts/PageShell.astro';
+import { content } from '../../data/content';
+import type { Locale } from '../../data/content';
+
+const lang: Locale = 'fr';
+const t = content[lang];
+const contact = t.contactData;
+const mailto = `mailto:${contact.email}?subject=Projet%20proc%C3%A9d%C3%A9%20-%20MaxReact`;
+const tel = `tel:${contact.phone.replace(/\\s+/g, '')}`;
+---
+
+<PageShell lang={lang} t={t} meta={t.meta}>
+  <section class="grid md:grid-cols-2 gap-10 items-center">
+    <div class="space-y-6">
+      <span class="pill">{t.hero.label}</span>
+      <h1 class="text-4xl md:text-5xl font-semibold text-slate-900 leading-tight">{t.hero.title}</h1>
+      <p class="text-lg text-slate-700">{t.hero.subtitle}</p>
+      <ul class="space-y-3 text-slate-700">
+        {t.hero.bullets.map((item: string) => (
+          <li class="flex gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-sky-700"></span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="flex flex-wrap gap-3">
+        <a class="btn btn-primary" href={mailto}>{t.hero.primaryCta}</a>
+        <a class="btn btn-secondary" href={t.hero.secondaryAnchor}>{t.hero.secondaryCta}</a>
+      </div>
+      <div class="flex items-center gap-3 pt-1">
+        <img src="/logo.png" alt="Logo MaxReact Engineering" class="h-11 w-11" />
+        <p class="text-sm text-slate-500">{contact.company} — {t.hero.label}</p>
+      </div>
+    </div>
+
+    <div class="card p-6 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-slate-50 opacity-90"></div>
+      <div class="relative space-y-5">
+        <p class="section-kicker">{t.nav.coverage}</p>
+        <h2 class="text-2xl font-semibold text-slate-900">Du concept à la mise en route</h2>
+        <div class="space-y-3">
+          {t.coverage.steps.map((step: any, index: number) => (
+            <div class="flex items-start gap-3">
+              <div class="mt-1 h-8 w-8 rounded-full bg-sky-100 text-sky-900 flex items-center justify-center font-semibold">
+                {index + 1}
+              </div>
+              <div>
+                <p class="font-semibold text-slate-900">{step.title}</p>
+                <p class="text-sm text-slate-600">{step.points[0]}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="text-sm text-slate-500">Passage laboratoire → pilote → usine accompagné étape par étape.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="grid md:grid-cols-[1fr_0.9fr] gap-8 lg:gap-12 md:items-center">
+    <div class="space-y-4">
+      <p class="section-kicker">{t.about.title}</p>
+      <h2 class="section-title">{contact.company}</h2>
+      <div class="space-y-3 text-slate-700">
+        {t.about.body.map((line: string) => (
+          <p>{line}</p>
+        ))}
+      </div>
+      <p class="text-sm text-slate-500">{t.about.caption}</p>
+    </div>
+    <div class="card overflow-hidden max-w-[360px] w-full mx-auto md:mx-0 md:justify-self-end md:self-center">
+      <img src="/profile.jpg" alt={`Portrait de ${contact.name}`} class="w-full h-auto object-cover" />
+    </div>
+  </section>
+
+  <section id="approach" class="space-y-6">
+    <p class="section-kicker">{t.hero.label}</p>
+    <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+      <h2 class="section-title flex-1">{t.scaleUp.title}</h2>
+      <div class="pill">Scale-up maîtrisé</div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5">
+      {t.scaleUp.bullets.map((item: string) => (
+        <div class="card p-5 flex gap-3">
+          <div class="h-10 w-10 rounded-xl bg-sky-100 text-sky-900 flex items-center justify-center font-semibold">•</div>
+          <p class="text-slate-700">{item}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="coverage" class="space-y-6">
+    <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="section-kicker">{t.nav.coverage}</p>
+        <h2 class="section-title">{t.coverage.title}</h2>
+      </div>
+      <div class="text-slate-500 text-sm">
+        Laboratoire → pilote → usine, en alignant jalons techniques et opérationnels.
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-[2fr_1fr] gap-6">
+      <div class="card p-6 space-y-6">
+        {t.coverage.steps.map((step: any, index: number) => (
+          <div class="flex gap-4">
+            <div class="flex flex-col items-center">
+              <div class="h-9 w-9 rounded-full bg-sky-800 text-white flex items-center justify-center font-semibold">
+                {index + 1}
+              </div>
+              {index < t.coverage.steps.length - 1 && <div class="w-px flex-1 bg-slate-200"></div>}
+            </div>
+            <div class="space-y-2">
+              <p class="font-semibold text-slate-900 text-lg">{step.title}</p>
+              <ul class="space-y-2 text-slate-700">
+                {step.points.map((p: string) => (
+                  <li class="flex gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-sky-600"></span>
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="card p-6 h-full space-y-4">
+        <p class="section-kicker">{t.role.title}</p>
+        <h3 class="text-xl font-semibold text-slate-900">Un interlocuteur unique</h3>
+        <ul class="space-y-3 text-slate-700">
+          {t.role.bullets.map((item: string) => (
+            <li class="flex gap-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-sky-600"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <div class="bg-sky-50 border border-sky-100 rounded-xl p-4 text-slate-700">
+          <p class="font-semibold text-sky-900">Message central</p>
+          <p>From lab to plant : sécuriser le scale-up avant d’engager l’investissement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results" class="space-y-6">
+    <p class="section-kicker">{t.nav.results}</p>
+    <h2 class="section-title">{t.outcomes.title}</h2>
+    <div class="grid md:grid-cols-2 gap-5">
+      {t.outcomes.bullets.map((item: string) => (
+        <div class="card p-5 flex gap-3">
+          <div class="h-10 w-10 rounded-xl bg-sky-800 text-white flex items-center justify-center font-semibold">✓</div>
+          <p class="text-slate-700">{item}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="contact" class="card p-6 space-y-5">
+    <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="section-kicker">{t.nav.contact}</p>
+        <h2 class="section-title">{t.contact.title}</h2>
+        <p class="text-slate-700">{t.contact.summary}</p>
+      </div>
+      <div class="flex gap-3 flex-wrap">
+        <a class="btn btn-primary" href={mailto}>{t.contact.ctaMail}</a>
+        <a class="btn btn-secondary" href={contact.linkedinUrl} target="_blank" rel="noreferrer">
+          {t.contact.ctaLinkedin}
+        </a>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-4 text-sm text-slate-700">
+      <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+        <p class="text-slate-500">{t.contact.labels.phone}</p>
+        <a class="font-semibold text-slate-900 hover:text-sky-900" href={tel}>{contact.phone}</a>
+      </div>
+      <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+        <p class="text-slate-500">{t.contact.labels.email}</p>
+        <a class="font-semibold text-slate-900 hover:text-sky-900 whitespace-nowrap" href={mailto}>{contact.email}</a>
+      </div>
+      <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+        <p class="text-slate-500">{t.contact.labels.location}</p>
+        <p class="font-semibold text-slate-900">{contact.locationFr}</p>
+      </div>
+      <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+        <p class="text-slate-500">{t.contact.labels.linkedin}</p>
+        <a class="font-semibold text-slate-900 hover:text-sky-900" href={contact.linkedinUrl} target="_blank" rel="noreferrer">
+          Maximilien Richald
+        </a>
+      </div>
+    </div>
+  </section>
+</PageShell>
