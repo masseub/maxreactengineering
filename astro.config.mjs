@@ -3,9 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://maxreactengineering.be',
-  // Trailing slash avoids double- or missing-slash issues when composing URLs in code
-  base: '/maxreactengineering',
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  base: '/',               // <-- IMPORTANT pour custom domain
+  output: 'static',        // <-- IMPORTANT pour GitHub Pages
+  vite: { plugins: [tailwindcss()] },
 });
