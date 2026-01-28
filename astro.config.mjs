@@ -2,9 +2,9 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://masseub.github.io',
+  site: 'https://maxreactengineering.be',
   // Trailing slash avoids double- or missing-slash issues when composing URLs in code
-  base: '/maxreactengineering/',
+  base: '/maxreactengineering',
   vite: {
     plugins: [tailwindcss()],
   },
