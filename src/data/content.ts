@@ -242,7 +242,7 @@ export const content: Record<Locale, Copy> = {
       photoAlt: `Portrait de ${contactFr.name}`
     },
     contact: {
-      title: 'Contact & CTA final',
+      title: 'Contact',
       summary: 'Prêt à sécuriser votre passage laboratoire → usine ? Parlons de votre procédé.',
       mailSubject: 'Projet procédé - MaxReact',
       labels: {
@@ -375,7 +375,7 @@ export const content: Record<Locale, Copy> = {
       photoAlt: `Portrait of ${contactEn.name}`
     },
     contact: {
-      title: 'Contact & final CTA',
+      title: 'Contact',
       summary: 'Ready to secure your lab-to-plant move? Let’s talk about your process.',
       mailSubject: 'Process project - MaxReact',
       labels: {
