@@ -1,18 +1,147 @@
 export type Locale = 'fr' | 'en';
 
-const linkedinUrl = 'https://be.linkedin.com/in/maximilienrichald-process-quality';
-const contact = {
+type LayoutCopy = {
+  brandName: string;
+  logoAlt: string;
+  skipToContent: string;
+  backToTop: string;
+  languageSwitcher: string;
+};
+
+type NavCopy = {
+  approach: string;
+  coverage: string;
+  results: string;
+  contact: string;
+};
+
+type HeroCopy = {
+  label: string;
+  title: string;
+  subtitle: string;
+  bullets: string[];
+  primaryCta: string;
+  secondaryCta: string;
+  secondaryAnchor: string;
+  cardTitle: string;
+  cardSummary: string;
+};
+
+type ScaleUpCopy = {
+  title: string;
+  bullets: string[];
+  pill: string;
+};
+
+type CoverageStep = {
+  title: string;
+  points: string[];
+};
+
+type CoverageCopy = {
+  title: string;
+  steps: CoverageStep[];
+  intro: string;
+};
+
+type RoleCopy = {
+  title: string;
+  bullets: string[];
+  cardTitle: string;
+  coreMessageTitle: string;
+  coreMessageBody: string;
+};
+
+type OutcomesCopy = {
+  title: string;
+  bullets: string[];
+};
+
+type AboutCopy = {
+  title: string;
+  body: string[];
+  caption: string;
+  photoAlt: string;
+};
+
+type ContactCopy = {
+  title: string;
+  summary: string;
+  mailSubject: string;
+  labels: {
+    phone: string;
+    email: string;
+    location: string;
+    linkedin: string;
+  };
+  ctaMail: string;
+  ctaLinkedin: string;
+};
+
+type FooterCopy = {
+  location: string;
+  note: string;
+  copyrightPrefix: string;
+};
+
+type MetaCopy = {
+  title: string;
+  description: string;
+  locale: string;
+};
+
+type ContactData = {
+  name: string;
+  company: string;
+  phone: string;
+  email: string;
+  linkedinUrl: string;
+  location: string;
+};
+
+export type Copy = {
+  layout: LayoutCopy;
+  headerTagline: string;
+  nav: NavCopy;
+  hero: HeroCopy;
+  scaleUp: ScaleUpCopy;
+  coverage: CoverageCopy;
+  role: RoleCopy;
+  outcomes: OutcomesCopy;
+  about: AboutCopy;
+  contact: ContactCopy;
+  footer: FooterCopy;
+  meta: MetaCopy;
+  contactData: ContactData;
+};
+
+const baseContact = {
   name: 'Maximilien Richald',
   company: 'MaxReact Engineering',
   phone: '+32 496 08 43 43',
   email: 'maximilien.richald@outlook.com',
-  locationFr: 'Genappe, Belgique',
-  locationEn: 'Genappe, Belgium',
-  linkedinUrl
+  linkedinUrl: 'https://be.linkedin.com/in/maximilienrichald-process-quality'
 };
 
-export const content: Record<Locale, any> = {
+const contactFr: ContactData = {
+  ...baseContact,
+  location: 'Genappe, Belgique'
+};
+
+const contactEn: ContactData = {
+  ...baseContact,
+  location: 'Genappe, Belgium'
+};
+
+export const content: Record<Locale, Copy> = {
   fr: {
+    layout: {
+      brandName: contactFr.company,
+      logoAlt: `Logo ${contactFr.company}`,
+      skipToContent: 'Aller au contenu principal',
+      backToTop: 'Revenir en haut de la page',
+      languageSwitcher: 'Sélecteur de langue'
+    },
     headerTagline: 'From lab to plant.',
     nav: {
       approach: 'Approche',
@@ -32,7 +161,9 @@ export const content: Record<Locale, any> = {
       ],
       primaryCta: 'Discuter de votre procédé',
       secondaryCta: 'Voir l’approche',
-      secondaryAnchor: '#approach'
+      secondaryAnchor: '#approach',
+      cardTitle: 'Du concept à la mise en route',
+      cardSummary: 'Passage laboratoire → pilote → usine accompagné étape par étape.'
     },
     scaleUp: {
       title: 'Pourquoi le passage à l’échelle est critique',
@@ -41,7 +172,8 @@ export const content: Record<Locale, any> = {
         'Les équipements industriels imposent leurs propres limitations (matière, mélange, inertage, CIP/SIP)',
         'Les contraintes HSE et disponibilité font émerger des risques absents au labo',
         'Sans vision procédé complète, les délais et CAPEX explosent'
-      ]
+      ],
+      pill: 'Scale-up maîtrisé'
     },
     coverage: {
       title: 'Couverture complète du cycle de développement',
@@ -57,11 +189,11 @@ export const content: Record<Locale, any> = {
           title: 'Adaptation aux contraintes industrielles',
           points: [
             'Choix d’équipements réalistes (agitation, transfert thermique, sécurité procédé)',
-            'Robustesse vis‑à‑vis des matières premières et des variations opératoires'
+            'Robustesse vis-à-vis des matières premières et des variations opératoires'
           ]
         },
         {
-          title: 'Pilote / pré‑industriel',
+          title: 'Pilote / pré-industriel',
           points: [
             'Plans d’essais pour valider le scale-up et identifier les points de rupture',
             'Boucles d’amélioration courtes avec les équipes terrain'
@@ -74,7 +206,8 @@ export const content: Record<Locale, any> = {
             'Support au démarrage et passage de relais aux équipes exploitation'
           ]
         }
-      ]
+      ],
+      intro: 'Laboratoire → pilote → usine, en alignant jalons techniques et opérationnels.'
     },
     role: {
       title: 'Rôle de MaxReact Engineering',
@@ -83,7 +216,10 @@ export const content: Record<Locale, any> = {
         'Anticipation des risques techniques et des modes de défaillance',
         'Approche structurée mais pragmatique, centrée sur le procédé réel',
         'Décisions basées sur des données d’essais et des modèles simples, actionnables'
-      ]
+      ],
+      cardTitle: 'Un interlocuteur unique',
+      coreMessageTitle: 'Message central',
+      coreMessageBody: 'From lab to plant : sécuriser le scale-up avant d’engager l’investissement.'
     },
     outcomes: {
       title: 'Résultat pour le client',
@@ -101,11 +237,13 @@ export const content: Record<Locale, any> = {
         'Plus de 10 ans à faire dialoguer équipes R&D, engineering et production pour sécuriser les procédés.',
         'Culture sécurité et exploitation, orientation résultats.'
       ],
-      caption: `${contact.name} – ${contact.company}`
+      caption: `${contactFr.name} – ${contactFr.company}`,
+      photoAlt: `Portrait de ${contactFr.name}`
     },
     contact: {
       title: 'Contact & CTA final',
       summary: 'Prêt à sécuriser votre passage laboratoire → usine ? Parlons de votre procédé.',
+      mailSubject: 'Projet procédé - MaxReact',
       labels: {
         phone: 'Téléphone',
         email: 'Email',
@@ -116,8 +254,9 @@ export const content: Record<Locale, any> = {
       ctaLinkedin: 'Voir le profil LinkedIn'
     },
     footer: {
-      location: contact.locationFr,
-      note: 'Ingénierie procédé en chimie — du laboratoire à l’usine.'
+      location: contactFr.location,
+      note: 'Ingénierie procédé en chimie — du laboratoire à l’usine.',
+      copyrightPrefix: '©'
     },
     meta: {
       title: 'MaxReact Engineering | Ingénierie procédé – du laboratoire à l’usine',
@@ -125,9 +264,16 @@ export const content: Record<Locale, any> = {
         'Consultant en ingénierie procédé pour le passage laboratoire → pilote → usine. Développement, mise au point et transfert de procédés chimiques industrialisables.',
       locale: 'fr_BE'
     },
-    contactData: contact
+    contactData: contactFr
   },
   en: {
+    layout: {
+      brandName: contactEn.company,
+      logoAlt: `${contactEn.company} logo`,
+      skipToContent: 'Skip to main content',
+      backToTop: 'Back to top',
+      languageSwitcher: 'Language switcher'
+    },
     headerTagline: 'From lab to plant.',
     nav: {
       approach: 'Approach',
@@ -147,7 +293,9 @@ export const content: Record<Locale, any> = {
       ],
       primaryCta: 'Discuss your process',
       secondaryCta: 'See the approach',
-      secondaryAnchor: '#approach'
+      secondaryAnchor: '#approach',
+      cardTitle: 'From concept to start-up',
+      cardSummary: 'Lab → pilot → plant with controlled learnings at each gate.'
     },
     scaleUp: {
       title: 'Why scale-up is critical',
@@ -156,7 +304,8 @@ export const content: Record<Locale, any> = {
         'Industrial equipment imposes its own limits (mixing, inerting, cleaning, containment)',
         'HSE, uptime and operability risks appear that are invisible in the lab',
         'Without an end-to-end view, timelines and CAPEX spiral'
-      ]
+      ],
+      pill: 'Scale-up under control'
     },
     coverage: {
       title: 'Full development cycle coverage',
@@ -176,7 +325,7 @@ export const content: Record<Locale, any> = {
           ]
         },
         {
-          title: 'Pilot / pre‑industrial',
+          title: 'Pilot / pre-industrial',
           points: [
             'Test plans to validate scale-up and expose failure modes',
             'Short learning loops with on-site teams'
@@ -189,7 +338,8 @@ export const content: Record<Locale, any> = {
             'Start-up support and handover to operations'
           ]
         }
-      ]
+      ],
+      intro: 'Lab → pilot → plant with aligned technical and operational gates.'
     },
     role: {
       title: 'Role of MaxReact Engineering',
@@ -198,7 +348,10 @@ export const content: Record<Locale, any> = {
         'Anticipates technical risks and failure modes early',
         'Structured yet pragmatic approach, anchored in the real process',
         'Decisions backed by test data and simple, actionable models'
-      ]
+      ],
+      cardTitle: 'One accountable interface',
+      coreMessageTitle: 'Core message',
+      coreMessageBody: 'From lab to plant: de-risk scale-up before committing capital.'
     },
     outcomes: {
       title: 'Outcome for you',
@@ -216,11 +369,13 @@ export const content: Record<Locale, any> = {
         '10+ years translating between R&D, engineering and operations to secure processes.',
         'Safety-first and operations-focused, with a bias to tangible results.'
       ],
-      caption: `${contact.name} – ${contact.company}`
+      caption: `${contactEn.name} – ${contactEn.company}`,
+      photoAlt: `Portrait of ${contactEn.name}`
     },
     contact: {
       title: 'Contact & final CTA',
       summary: 'Ready to de-risk your lab-to-plant move? Let’s talk about your process.',
+      mailSubject: 'Process discussion - MaxReact',
       labels: {
         phone: 'Phone',
         email: 'Email',
@@ -231,8 +386,9 @@ export const content: Record<Locale, any> = {
       ctaLinkedin: 'Open LinkedIn profile'
     },
     footer: {
-      location: contact.locationEn,
-      note: 'Chemical process engineering — from lab to plant.'
+      location: contactEn.location,
+      note: 'Chemical process engineering — from lab to plant.',
+      copyrightPrefix: '©'
     },
     meta: {
       title: 'MaxReact Engineering | Process engineering from lab to plant',
@@ -240,6 +396,6 @@ export const content: Record<Locale, any> = {
         'Consultant in chemical process engineering to take you from lab to pilot to plant. Development, optimization and transfer of industrial-ready processes.',
       locale: 'en_GB'
     },
-    contactData: contact
+    contactData: contactEn
   }
 };

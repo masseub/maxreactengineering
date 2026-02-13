@@ -6,7 +6,8 @@ import type { Locale } from '../../data/content';
 const lang: Locale = 'fr';
 const t = content[lang];
 const contact = t.contactData;
-const mailto = `mailto:${contact.email}?subject=Projet%20proc%C3%A9d%C3%A9%20-%20MaxReact`;
+const mailSubject = encodeURIComponent(t.contact.mailSubject);
+const mailto = `mailto:${contact.email}?subject=${mailSubject}`;
 const tel = `tel:${contact.phone.replace(/\\s+/g, '')}`;
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1) : path}`;
@@ -33,10 +34,10 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
       <div class="flex items-center gap-3 pt-1">
         <a
           href="#top"
-          aria-label="Revenir en haut de la page"
+          aria-label={t.layout.backToTop}
           class="inline-block shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
         >
-          <img src={withBase('logo.png')} alt="Logo MaxReact Engineering" class="h-[132px] w-[132px]" />
+          <img src={withBase('logo.png')} alt={t.layout.logoAlt} class="h-[132px] w-[132px]" />
         </a>
         <p class="text-sm text-slate-500">{contact.company} — {t.hero.label}</p>
       </div>
@@ -46,7 +47,7 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
       <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-slate-50 opacity-90"></div>
       <div class="relative space-y-5">
         <p class="section-kicker">{t.nav.coverage}</p>
-        <h2 class="text-2xl font-semibold text-slate-900">Du concept à la mise en route</h2>
+        <h2 class="text-2xl font-semibold text-slate-900">{t.hero.cardTitle}</h2>
         <div class="space-y-3">
           {t.coverage.steps.map((step: any, index: number) => (
             <div class="flex items-start gap-3">
@@ -60,7 +61,7 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
             </div>
           ))}
         </div>
-        <p class="text-sm text-slate-500">Passage laboratoire → pilote → usine accompagné étape par étape.</p>
+        <p class="text-sm text-slate-500">{t.hero.cardSummary}</p>
       </div>
     </div>
   </section>
@@ -77,7 +78,7 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
       <p class="text-sm text-slate-500">{t.about.caption}</p>
     </div>
     <div class="card overflow-hidden max-w-[360px] w-full mx-auto md:mx-0 md:justify-self-end md:self-center">
-      <img src={withBase('profile.jpg')} alt={`Portrait de ${contact.name}`} class="w-full h-auto object-cover" />
+      <img src={withBase('profile.jpg')} alt={t.about.photoAlt} class="w-full h-auto object-cover" />
     </div>
   </section>
 
@@ -85,7 +86,7 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
     <p class="section-kicker">{t.hero.label}</p>
     <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
       <h2 class="section-title flex-1">{t.scaleUp.title}</h2>
-      <div class="pill">Scale-up maîtrisé</div>
+      <div class="pill">{t.scaleUp.pill}</div>
     </div>
     <div class="grid md:grid-cols-2 gap-5">
       {t.scaleUp.bullets.map((item: string) => (
@@ -103,9 +104,7 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
         <p class="section-kicker">{t.nav.coverage}</p>
         <h2 class="section-title">{t.coverage.title}</h2>
       </div>
-      <div class="text-slate-500 text-sm">
-        Laboratoire → pilote → usine, en alignant jalons techniques et opérationnels.
-      </div>
+      <div class="text-slate-500 text-sm">{t.coverage.intro}</div>
     </div>
 
     <div class="grid lg:grid-cols-[2fr_1fr] gap-6">
@@ -135,7 +134,7 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
 
       <div class="card p-6 h-full space-y-4">
         <p class="section-kicker">{t.role.title}</p>
-        <h3 class="text-xl font-semibold text-slate-900">Un interlocuteur unique</h3>
+        <h3 class="text-xl font-semibold text-slate-900">{t.role.cardTitle}</h3>
         <ul class="space-y-3 text-slate-700">
           {t.role.bullets.map((item: string) => (
             <li class="flex gap-2">
@@ -145,8 +144,8 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
           ))}
         </ul>
         <div class="bg-sky-50 border border-sky-100 rounded-xl p-4 text-slate-700">
-          <p class="font-semibold text-sky-900">Message central</p>
-          <p>From lab to plant : sécuriser le scale-up avant d’engager l’investissement.</p>
+          <p class="font-semibold text-sky-900">{t.role.coreMessageTitle}</p>
+          <p>{t.role.coreMessageBody}</p>
         </div>
       </div>
     </div>
@@ -191,12 +190,12 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
       </div>
       <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
         <p class="text-slate-500">{t.contact.labels.location}</p>
-        <p class="font-semibold text-slate-900">{contact.locationFr}</p>
+        <p class="font-semibold text-slate-900">{contact.location}</p>
       </div>
       <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
         <p class="text-slate-500">{t.contact.labels.linkedin}</p>
         <a class="font-semibold text-slate-900 hover:text-sky-900" href={contact.linkedinUrl} target="_blank" rel="noreferrer">
-          Maximilien Richald
+          {contact.name}
         </a>
       </div>
     </div>

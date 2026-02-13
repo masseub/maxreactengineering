@@ -1,10 +1,10 @@
 ---
 import '../styles/global.css';
-import type { Locale } from '../data/content';
+import type { Locale, Copy } from '../data/content';
 
 interface Props {
   lang: Locale;
-  t: any;
+  t: Copy;
   meta: {
     title: string;
     description: string;
@@ -20,9 +20,12 @@ const altHref = withBase(`${altLang}/`);
 const canonical = withBase(`${lang}/`);
 const siteUrl = Astro.site?.toString();
 const canonicalUrl = siteUrl ? new URL(canonical, siteUrl).toString() : canonical;
-const skipLabel = lang === 'fr' ? 'Aller au contenu principal' : 'Skip to main content';
+const skipLabel = t.layout.skipToContent;
 const topAnchor = '#top';
-const backToTopLabel = lang === 'fr' ? 'Revenir en haut de la page' : 'Back to top';
+const backToTopLabel = t.layout.backToTop;
+const logoAlt = t.layout.logoAlt;
+const brandName = t.layout.brandName;
+const languageSwitcherLabel = t.layout.languageSwitcher;
 ---
 
 <!doctype html>
@@ -57,10 +60,10 @@ const backToTopLabel = lang === 'fr' ? 'Revenir en haut de la page' : 'Back to t
             aria-label={backToTopLabel}
             class="inline-block shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
-            <img src={withBase('logo.png')} alt="MaxReact Engineering logo" class="h-[120px] w-[120px]" />
+            <img src={withBase('logo.png')} alt={logoAlt} class="h-[120px] w-[120px]" />
           </a>
           <div>
-            <p class="text-xs uppercase tracking-[0.18em] text-slate-500">MaxReact Engineering</p>
+            <p class="text-xs uppercase tracking-[0.18em] text-slate-500">{brandName}</p>
             <p class="text-sm font-semibold text-sky-900">{t.headerTagline}</p>
           </div>
         </div>
@@ -70,7 +73,7 @@ const backToTopLabel = lang === 'fr' ? 'Revenir en haut de la page' : 'Back to t
           <a class="nav-link" href="#results">{t.nav.results}</a>
           <a class="btn-ghost" href="#contact">{t.nav.contact}</a>
           <div class="h-6 w-px bg-slate-200" aria-hidden="true"></div>
-          <div class="flex items-center gap-2 text-slate-600" aria-label="Language switcher">
+          <div class="flex items-center gap-2 text-slate-600" aria-label={languageSwitcherLabel}>
             <a
               href={withBase('fr/')}
               class={`hover:text-sky-900 transition ${lang === 'fr' ? 'text-sky-900 font-semibold' : 'text-slate-500'}`}
@@ -101,16 +104,16 @@ const backToTopLabel = lang === 'fr' ? 'Revenir en haut de la page' : 'Back to t
             aria-label={backToTopLabel}
             class="inline-block shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
-            <img src={withBase('logo.png')} alt="MaxReact Engineering logo" class="h-[108px] w-[108px]" />
+            <img src={withBase('logo.png')} alt={logoAlt} class="h-[108px] w-[108px]" />
           </a>
           <div>
-            <p class="text-sm font-semibold">MaxReact Engineering</p>
+            <p class="text-sm font-semibold">{brandName}</p>
             <p class="text-xs text-slate-300">{t.footer.note}</p>
           </div>
         </div>
         <div class="text-sm text-slate-300">
           <p>{t.footer.location}</p>
-          <p class="text-slate-400">© {new Date().getFullYear()} MaxReact Engineering</p>
+          <p class="text-slate-400">{t.footer.copyrightPrefix} {new Date().getFullYear()} {brandName}</p>
         </div>
       </div>
     </footer>
