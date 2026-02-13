@@ -140,129 +140,129 @@ export const content: Record<Locale, Copy> = {
       logoAlt: `Logo ${contactFr.company}`,
       skipToContent: 'Aller au contenu principal',
       backToTop: 'Revenir en haut de la page',
-      languageSwitcher: 'SÃ©lecteur de langue'
+      languageSwitcher: 'Sélecteur de langue'
     },
     headerTagline: 'From lab to plant.',
     nav: {
       approach: 'Approche',
       coverage: 'Cycle complet',
-      results: 'RÃ©sultats',
+      results: 'Résultats',
       contact: 'Contact'
     },
     hero: {
       label: 'From lab to plant.',
-      title: 'IngÃ©nierie procÃ©dÃ© â€“ du laboratoire Ã  lâ€™usine',
+      title: 'Ingénierie procédé – du laboratoire à l’usine',
       subtitle:
-        'Transfert de votre procÃ©dÃ© du labo vers lâ€™usine et optimisation de celui-ci. Pont entre laboratoire, pilote et production.',
+        'Transfert de votre procédé du labo vers l’usine et optimisation de celui-ci. Pont entre laboratoire, pilote et production.',
       bullets: [
-        'ProcÃ©dÃ©s chimiques complexes, contraintes rÃ©elles dâ€™exploitation',
-        'Passage laboratoire â†’ pilote â†’ usine sans perte de maÃ®trise',
-        'Interface R&D, ingÃ©nierie et production pour sÃ©curiser chaque jalon'
+        'Procédés chimiques complexes, contraintes réelles d’exploitation',
+        'Passage laboratoire ? pilote ? usine sans perte de maîtrise',
+        'Interface R&D, ingénierie et production pour sécuriser chaque jalon'
       ],
-      primaryCta: 'Discuter de votre procÃ©dÃ©',
-      secondaryCta: 'Voir lâ€™approche',
+      primaryCta: 'Discuter de votre procédé',
+      secondaryCta: 'Voir l’approche',
       secondaryAnchor: '#approach',
-      cardTitle: 'Du concept Ã  la mise en route',
-      cardSummary: 'Passage laboratoire â†’ pilote â†’ usine accompagnÃ© Ã©tape par Ã©tape.'
+      cardTitle: 'Du concept à la mise en route',
+      cardSummary: 'Passage laboratoire ? pilote ? usine accompagné étape par étape.'
     },
     scaleUp: {
-      title: 'Pourquoi le passage Ã  lâ€™Ã©chelle est critique',
+      title: 'Pourquoi le passage à l’échelle est critique',
       bullets: [
-        'Les Ã©quilibres thermiques et cinÃ©tiques Ã©voluent quand le volume change',
-        'Les Ã©quipements industriels imposent leurs propres limitations (matiÃ¨re, mÃ©lange, inertage, etc.)',
-        'Les contraintes de sÃ©curitÃ© et de disponibilitÃ© font apparaÃ®tre des risques inexistants Ã  lâ€™Ã©chelle du laboratoire.',
-        'La variabilitÃ© des matiÃ¨res premiÃ¨res et des opÃ©rations devient un facteur critique de la qualitÃ© lors du passage Ã  lâ€™Ã©chelle industrielle.',
-        'Sans vision complÃ¨te du procÃ©dÃ©, les dÃ©lais et CAPEX explosent'
+        'Les équilibres thermiques et cinétiques évoluent quand le volume change',
+        'Les équipements industriels imposent leurs propres limitations (matière, mélange, inertage, etc.)',
+        'Les contraintes de sécurité et de disponibilité font apparaître des risques inexistants à l’échelle du laboratoire.',
+        'La variabilité des matières premières et des opérations devient un facteur critique de la qualité lors du passage à l’échelle industrielle.,
+        'Sans vision complète du procédé, les délais et CAPEX explosent'
       ],
-      pill: 'Scale-up maÃ®trisÃ©'
+      pill: 'Scale-up maîtrisé'
     },
     coverage: {
-      title: 'Couverture complÃ¨te du cycle de dÃ©veloppement',
+      title: 'Couverture complète du cycle de développement',
       steps: [
         {
-          title: 'ProcÃ©dÃ© laboratoire',
+          title: 'Procédé laboratoire',
           points: [
-            'Clarification du schÃ©ma rÃ©actionnel et des paramÃ¨tres critiques',
-            'Masse et bilans Ã©nergÃ©tiques pour prÃ©parer le dimensionnement'
+            'Clarification du schéma réactionnel et des paramètres critiques',
+            'Masse et bilans énergétiques pour préparer le dimensionnement'
           ]
         },
         {
           title: 'Adaptation aux contraintes industrielles',
           points: [
-            'Choix dâ€™Ã©quipements rÃ©alistes (agitation, transfert thermique, sÃ©curitÃ© procÃ©dÃ©)',
-            'Robustesse vis-Ã -vis des matiÃ¨res premiÃ¨res et des variations opÃ©ratoires'
+            'Choix d’équipements réalistes (agitation, transfert thermique, sécurité procédé)',
+            'Robustesse vis-à-vis des matières premières et des variations opératoires'
           ]
         },
         {
-          title: 'Pilote / prÃ©-industriel',
+          title: 'Pilote / pré-industriel',
           points: [
-            'Plans dâ€™essais pour valider le scale-up et identifier les points de rupture',
-            'Boucles dâ€™amÃ©lioration courtes avec les Ã©quipes terrain'
+            'Plans d’essais pour valider le scale-up et identifier les points de rupture',
+            'Boucles d’amélioration courtes avec les équipes terrain'
           ]
         },
         {
           title: 'Transfert vers la production',
           points: [
-            'Dossiers de procÃ©dÃ© et logiques de contrÃ´le exploitables',
-            'Support au dÃ©marrage et passage de relais aux Ã©quipes exploitation'
+            'Dossiers de procédé et logiques de contrôle exploitables',
+            'Support au démarrage et passage de relais aux équipes exploitation'
           ]
         }
       ],
-      intro: 'Laboratoire â†’ pilote â†’ usine, en alignant jalons techniques et opÃ©rationnels.'
+      intro: 'Laboratoire ? pilote ? usine, en alignant jalons techniques et opérationnels.'
     },
     role: {
-      title: 'RÃ´le de MaxReact Engineering',
+      title: 'Rôle de MaxReact Engineering',
       bullets: [
-        'Interface claire entre R&D, ingÃ©nierie et production',
-        'Anticipation des risques techniques et des modes de dÃ©faillance',
-        'Approche structurÃ©e mais pragmatique, centrÃ©e sur le procÃ©dÃ© rÃ©el',
-        'DÃ©cisions basÃ©es sur des donnÃ©es dâ€™essais et des modÃ¨les simples, actionnables'
+        'Interface claire entre R&D, ingénierie et production',
+        'Anticipation des risques techniques et des modes de défaillance',
+        'Approche structurée mais pragmatique, centrée sur le procédé réel',
+        'Décisions basées sur des données d’essais et des modèles simples, actionnables'
       ],
       cardTitle: 'Un interlocuteur unique',
       coreMessageTitle: 'Message central',
-      coreMessageBody: 'From lab to plant : sÃ©curiser le scale-up avant dâ€™engager lâ€™investissement.'
+      coreMessageBody: 'From lab to plant : sécuriser le scale-up avant d’engager l’investissement.'
     },
     outcomes: {
-      title: 'RÃ©sultat pour le client',
+      title: 'Résultat pour le client',
       bullets: [
-        'ProcÃ©dÃ© industrialisable avec un mode opÃ©ratoire maÃ®trisÃ©',
-        'DÃ©cisions techniques sÃ©curisÃ©es (investissements, choix dâ€™Ã©quipements, CAPEX/OPEX)',
-        'Transition laboratoire â†’ usine pilotÃ©e et documentÃ©e',
-        'Base solide pour lâ€™exploitation industrielle et la montÃ©e en cadence'
+        'Procédé industrialisable avec un mode opératoire maîtrisé',
+        'Décisions techniques sécurisées (investissements, choix d’équipements, CAPEX/OPEX)',
+        'Transition laboratoire ? usine pilotée et documentée',
+        'Base solide pour l’exploitation industrielle et la montée en cadence'
       ]
     },
     about: {
-      title: 'Ã€ propos',
+      title: 'À propos',
       body: [
-        'IngÃ©nieur chimiste avec double culture laboratoire et terrain industriel.',
-        'Plus de 10 ans Ã  faire dialoguer Ã©quipes R&D, engineering et production pour sÃ©curiser les procÃ©dÃ©s.',
-        'Culture sÃ©curitÃ© et exploitation, orientation rÃ©sultats.'
+        'Ingénieur chimiste avec double culture laboratoire et terrain industriel.',
+        'Plus de 10 ans à faire dialoguer équipes R&D, engineering et production pour sécuriser les procédés.',
+        'Culture sécurité et exploitation, orientation résultats.'
       ],
-      caption: `${contactFr.name} â€“ ${contactFr.company}`,
+      caption: `${contactFr.name} – ${contactFr.company}`,
       photoAlt: `Portrait de ${contactFr.name}`
     },
     contact: {
       title: 'Contact & CTA final',
-      summary: 'PrÃªt Ã  sÃ©curiser votre passage laboratoire â†’ usine ? Parlons de votre procÃ©dÃ©.',
-      mailSubject: 'Projet procÃ©dÃ© - MaxReact',
+      summary: 'Prêt à sécuriser votre passage laboratoire ? usine ? Parlons de votre procédé.',
+      mailSubject: 'Projet procédé - MaxReact',
       labels: {
-        phone: 'TÃ©lÃ©phone',
+        phone: 'Téléphone',
         email: 'Email',
         location: 'Localisation',
         linkedin: 'LinkedIn'
       },
-      ctaMail: 'Discuter de votre procÃ©dÃ©',
+      ctaMail: 'Discuter de votre procédé',
       ctaLinkedin: 'Voir le profil LinkedIn'
     },
     footer: {
       location: contactFr.location,
-      note: 'IngÃ©nierie procÃ©dÃ© en chimie â€” du laboratoire Ã  lâ€™usine.',
-      copyrightPrefix: 'Â©'
+      note: 'Ingénierie procédé en chimie — du laboratoire à l’usine.',
+      copyrightPrefix: '©'
     },
     meta: {
-      title: 'MaxReact Engineering | IngÃ©nierie procÃ©dÃ© â€“ du laboratoire Ã  lâ€™usine',
+      title: 'MaxReact Engineering | Ingénierie procédé – du laboratoire à l’usine',
       description:
-        'Consultant en ingÃ©nierie procÃ©dÃ© pour le passage laboratoire â†’ pilote â†’ usine. DÃ©veloppement, mise au point et transfert de procÃ©dÃ©s chimiques industrialisables.',
+        'Consultant en ingénierie procédé pour le passage laboratoire ? pilote ? usine. Développement, mise au point et transfert de procédés chimiques industrialisables.',
       locale: 'fr_BE'
     },
     contactData: contactFr
@@ -289,22 +289,21 @@ export const content: Record<Locale, Copy> = {
         'Transfer your process from the lab to the plant and optimize it. Bridge between laboratory, pilot and production.',
       bullets: [
         'Complex chemical processes under real operating constraints',
-        'Lab â†’ pilot â†’ plant without losing process knowledge',
+        'Lab ? pilot ? plant without losing process knowledge',
         'Clear interface between R&D, engineering and production to secure each milestone'
       ],
       primaryCta: 'Discuss your process',
       secondaryCta: 'See the approach',
       secondaryAnchor: '#approach',
       cardTitle: 'From concept to start-up',
-      cardSummary: 'Lab â†’ pilot â†’ plant, guided step by step.'
+      cardSummary: 'Lab ? pilot ? plant with controlled learnings at each gate.'
     },
     scaleUp: {
       title: 'Why scale-up is critical',
       bullets: [
         'Heat and mass transfer behave differently at production scale',
-        'Industrial equipment imposes its own limits (materials, mixing, inerting, etc.)',
-        'Safety and availability constraints reveal risks that are invisible at lab scale',
-        'Raw-material and operating variability becomes a critical quality factor when scaling to industrial level.',
+        'Industrial equipment imposes its own limits (mixing, inerting, cleaning, containment)',
+        'HSE, uptime and operability risks appear that are invisible in the lab',
         'Without an end-to-end view, timelines and CAPEX spiral'
       ],
       pill: 'Scale-up under control'
@@ -341,7 +340,7 @@ export const content: Record<Locale, Copy> = {
           ]
         }
       ],
-      intro: 'Lab â†’ pilot â†’ plant with aligned technical and operational gates.'
+      intro: 'Lab ? pilot ? plant with aligned technical and operational gates.'
     },
     role: {
       title: 'Role of MaxReact Engineering',
@@ -360,7 +359,7 @@ export const content: Record<Locale, Copy> = {
       bullets: [
         'An industrialisable process with a controlled operating envelope',
         'Safer technical decisions (equipment choices, CAPEX/OPEX impacts)',
-        'Managed lab â†’ plant transition with documented learnings',
+        'Managed lab ? plant transition with documented learnings',
         'Solid basis for reliable production and future ramp-up'
       ]
     },
@@ -371,13 +370,13 @@ export const content: Record<Locale, Copy> = {
         '10+ years translating between R&D, engineering and operations to secure processes.',
         'Safety-first and operations-focused, with a bias to tangible results.'
       ],
-      caption: `${contactEn.name} â€“ ${contactEn.company}`,
+      caption: `${contactEn.name} – ${contactEn.company}`,
       photoAlt: `Portrait of ${contactEn.name}`
     },
     contact: {
       title: 'Contact & final CTA',
-      summary: 'Ready to secure your lab-to-plant move? Letâ€™s talk about your process.',
-      mailSubject: 'Process project - MaxReact',
+      summary: 'Ready to de-risk your lab-to-plant move? Let’s talk about your process.',
+      mailSubject: 'Process discussion - MaxReact',
       labels: {
         phone: 'Phone',
         email: 'Email',
@@ -389,8 +388,8 @@ export const content: Record<Locale, Copy> = {
     },
     footer: {
       location: contactEn.location,
-      note: 'Chemical process engineering â€” from lab to plant.',
-      copyrightPrefix: 'Â©'
+      note: 'Chemical process engineering — from lab to plant.',
+      copyrightPrefix: '©'
     },
     meta: {
       title: 'MaxReact Engineering | Process engineering from lab to plant',
@@ -401,4 +400,5 @@ export const content: Record<Locale, Copy> = {
     contactData: contactEn
   }
 };
+
 
