@@ -1,5 +1,8 @@
 ---
 import PageShell from '../../layouts/PageShell.astro';
+import { Image } from 'astro:assets';
+import logoImage from '../../assets/logo.png';
+import profileImage from '../../assets/profile.jpg';
 import { content } from '../../data/content';
 import type { Locale } from '../../data/content';
 
@@ -9,17 +12,15 @@ const contact = t.contactData;
 const mailSubject = encodeURIComponent(t.contact.mailSubject);
 const mailto = `mailto:${contact.email}?subject=${mailSubject}`;
 const tel = `tel:${contact.phone.replace(/\\s+/g, '')}`;
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1) : path}`;
 ---
 
 <PageShell lang={lang} t={t} meta={t.meta}>
-  <section class="grid md:grid-cols-2 gap-10 items-center">
+  <section class="grid md:grid-cols-2 gap-8 md:gap-10 items-start md:items-center">
     <div class="space-y-6">
       <span class="pill">{t.hero.label}</span>
-      <h1 class="text-4xl md:text-5xl font-semibold text-slate-900 leading-tight">{t.hero.title}</h1>
-      <p class="text-lg text-slate-700">{t.hero.subtitle}</p>
-      <ul class="space-y-3 text-slate-700">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-900 leading-tight">{t.hero.title}</h1>
+      <p class="text-base sm:text-lg text-slate-700">{t.hero.subtitle}</p>
+      <ul class="space-y-3 text-sm sm:text-base text-slate-700">
         {t.hero.bullets.map((item: string) => (
           <li class="flex gap-3">
             <span class="mt-1 h-2 w-2 rounded-full bg-sky-700"></span>
@@ -27,23 +28,32 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
           </li>
         ))}
       </ul>
-      <div class="flex flex-wrap gap-3">
-        <a class="btn btn-primary" href={mailto}>{t.hero.primaryCta}</a>
+      <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3">
+        <a class="btn btn-primary w-full sm:w-auto justify-center" href={mailto}>{t.hero.primaryCta}</a>
         <a class="btn btn-secondary" href={t.hero.secondaryAnchor}>{t.hero.secondaryCta}</a>
       </div>
-      <div class="flex items-center gap-3 pt-1">
+      <div class="flex items-center gap-3 pt-1 min-w-0">
         <a
           href="#top"
           aria-label={t.layout.backToTop}
           class="inline-block shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
         >
-          <img src={withBase('logo.png')} alt={t.layout.logoAlt} class="h-[132px] w-[132px]" />
+          <Image
+            src={logoImage}
+            alt={t.layout.logoAlt}
+            class="h-16 w-16 sm:h-20 sm:w-20"
+            widths={[64, 80, 112, 132]}
+            sizes="(max-width: 640px) 64px, (max-width: 1024px) 80px, 112px"
+            loading="lazy"
+            decoding="async"
+            format="webp"
+          />
         </a>
-        <p class="text-sm text-slate-500">{contact.company} — {t.hero.label}</p>
+        <p class="text-sm text-slate-500 leading-snug break-words">{contact.company} - {t.hero.label}</p>
       </div>
     </div>
 
-    <div class="card p-6 relative overflow-hidden">
+    <div class="card p-4 sm:p-6 relative overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-slate-50 opacity-90"></div>
       <div class="relative space-y-5">
         <p class="section-kicker">{t.nav.coverage}</p>
@@ -66,7 +76,7 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
     </div>
   </section>
 
-  <section id="about" class="grid md:grid-cols-[1fr_0.9fr] gap-8 lg:gap-12 md:items-center">
+  <section id="about" class="grid md:grid-cols-[1fr_0.9fr] gap-6 sm:gap-8 lg:gap-12 md:items-center">
     <div class="space-y-4">
       <p class="section-kicker">{t.about.title}</p>
       <h2 class="section-title">{contact.company}</h2>
@@ -78,7 +88,16 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
       <p class="text-sm text-slate-500">{t.about.caption}</p>
     </div>
     <div class="card overflow-hidden max-w-[360px] w-full mx-auto md:mx-0 md:justify-self-end md:self-center">
-      <img src={withBase('profile.jpg')} alt={t.about.photoAlt} class="w-full h-auto object-cover" />
+      <Image
+        src={profileImage}
+        alt={t.about.photoAlt}
+        class="w-full h-auto object-cover"
+        widths={[320, 480, 720, 960]}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 360px"
+        loading="lazy"
+        decoding="async"
+        format="webp"
+      />
     </div>
   </section>
 
@@ -91,7 +110,7 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
     <div class="grid md:grid-cols-2 gap-5">
       {t.scaleUp.bullets.map((item: string) => (
         <div class="card p-5 flex gap-3">
-          <div class="h-10 w-10 rounded-xl bg-sky-100 text-sky-900 flex items-center justify-center font-semibold">•</div>
+          <div class="h-10 w-10 rounded-xl bg-sky-100 text-sky-900 flex items-center justify-center font-semibold">&bull;</div>
           <p class="text-slate-700">{item}</p>
         </div>
       ))}
@@ -104,14 +123,14 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
         <p class="section-kicker">{t.nav.coverage}</p>
         <h2 class="section-title">{t.coverage.title}</h2>
       </div>
-      <div class="text-slate-500 text-sm">{t.coverage.intro}</div>
+      <div class="text-slate-500 text-sm md:max-w-md">{t.coverage.intro}</div>
     </div>
 
     <div class="grid lg:grid-cols-[2fr_1fr] gap-6">
-      <div class="card p-6 space-y-6">
+      <div class="card p-4 sm:p-6 space-y-6">
         {t.coverage.steps.map((step: any, index: number) => (
-          <div class="flex gap-4">
-            <div class="flex flex-col items-center">
+          <div class="flex items-start gap-3 sm:gap-4">
+            <div class="flex flex-col items-center shrink-0">
               <div class="h-9 w-9 rounded-full bg-sky-800 text-white flex items-center justify-center font-semibold">
                 {index + 1}
               </div>
@@ -132,7 +151,7 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
         ))}
       </div>
 
-      <div class="card p-6 h-full space-y-4">
+      <div class="card p-4 sm:p-6 h-full space-y-4">
         <p class="section-kicker">{t.role.title}</p>
         <h3 class="text-xl font-semibold text-slate-900">{t.role.cardTitle}</h3>
         <ul class="space-y-3 text-slate-700">
@@ -157,36 +176,36 @@ const withBase = (path: string) => `${base}${path.startsWith('/') ? path.slice(1
     <div class="grid md:grid-cols-2 gap-5">
       {t.outcomes.bullets.map((item: string) => (
         <div class="card p-5 flex gap-3">
-          <div class="h-10 w-10 rounded-xl bg-sky-800 text-white flex items-center justify-center font-semibold">✓</div>
+          <div class="h-10 w-10 rounded-xl bg-sky-800 text-white flex items-center justify-center font-semibold">&#10003;</div>
           <p class="text-slate-700">{item}</p>
         </div>
       ))}
     </div>
   </section>
 
-  <section id="contact" class="card p-6 space-y-5">
+  <section id="contact" class="card p-4 sm:p-6 space-y-5">
     <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
       <div>
         <p class="section-kicker">{t.nav.contact}</p>
         <h2 class="section-title">{t.contact.title}</h2>
         <p class="text-slate-700">{t.contact.summary}</p>
       </div>
-      <div class="flex gap-3 flex-wrap">
-        <a class="btn btn-primary" href={mailto}>{t.contact.ctaMail}</a>
+      <div class="flex flex-col sm:flex-row gap-3 flex-wrap">
+        <a class="btn btn-primary w-full sm:w-auto justify-center" href={mailto}>{t.contact.ctaMail}</a>
         <a class="btn btn-secondary" href={contact.linkedinUrl} target="_blank" rel="noreferrer">
           {t.contact.ctaLinkedin}
         </a>
       </div>
     </div>
 
-    <div class="grid md:grid-cols-4 gap-4 text-sm text-slate-700">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-slate-700">
       <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
         <p class="text-slate-500">{t.contact.labels.phone}</p>
         <a class="font-semibold text-slate-900 hover:text-sky-900" href={tel}>{contact.phone}</a>
       </div>
       <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
         <p class="text-slate-500">{t.contact.labels.email}</p>
-        <a class="font-semibold text-slate-900 hover:text-sky-900 whitespace-nowrap" href={mailto}>{contact.email}</a>
+        <a class="font-semibold text-slate-900 hover:text-sky-900 break-all" href={mailto}>{contact.email}</a>
       </div>
       <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
         <p class="text-slate-500">{t.contact.labels.location}</p>
