@@ -155,9 +155,9 @@ export const content: Record<Locale, Copy> = {
       subtitle:
         'Transfert de votre procédé du labo vers l’usine et optimisation de celui-ci. Pont entre laboratoire, pilote et production.',
       bullets: [
-        'Procédés chimiques complexes, contraintes réelles d’exploitation',
-        'Passage laboratoire → pilote → usine sans perte de maîtrise',
-        'Interface R&D, ingénierie et production pour sécuriser chaque jalon'
+        'Procédés chimiques complexes, contraintes réelles d’exploitation.',
+        'Passage laboratoire → pilote → usine sans perte de maîtrise.',
+        'Interface R&D, ingénierie et production pour sécuriser chaque jalon.'
       ],
       primaryCta: 'Discuter de votre procédé',
       secondaryCta: 'Voir l’approche',
@@ -168,11 +168,11 @@ export const content: Record<Locale, Copy> = {
     scaleUp: {
       title: 'Pourquoi le passage à l’échelle est critique',
       bullets: [
-        'Les équilibres thermiques et cinétiques évoluent quand le volume change',
+        'Les équilibres thermiques et cinétiques évoluent quand le volume change.',
         'Les équipements industriels imposent leurs propres limitations (matière, mélange, inertage, etc.)',
         'Les contraintes de sécurité et de disponibilité font apparaître des risques inexistants à l’échelle du laboratoire.',
         'La variabilité des matières premières et des opérations devient un facteur critique de la qualité lors du passage à l’échelle industrielle.',
-        'Sans vision complète du procédé, les délais et CAPEX explosent'
+        'Sans vision complète du procédé, les délais et CAPEX explosent.'
       ],
       pill: 'Scale-up maîtrisé'
     },
@@ -182,29 +182,29 @@ export const content: Record<Locale, Copy> = {
         {
           title: 'Procédé laboratoire',
           points: [
-            'Clarification du schéma réactionnel et des paramètres critiques',
-            'Masse et bilans énergétiques pour préparer le dimensionnement'
+            'Clarification du schéma réactionnel et des paramètres critiques.',
+            'Masse et bilans énergétiques pour préparer le dimensionnement.'
           ]
         },
         {
           title: 'Adaptation aux contraintes industrielles',
           points: [
-            'Choix d’équipements réalistes (agitation, transfert thermique, sécurité procédé)',
-            'Robustesse vis-à-vis des matières premières et des variations opératoires'
+            'Choix d’équipements réalistes (agitation, transfert thermique, sécurité procédé).',
+            'Robustesse vis-à-vis des matières premières et des variations opératoires.'
           ]
         },
         {
           title: 'Pilote / pré-industriel',
           points: [
-            'Plans d’essais pour valider le scale-up et identifier les points de rupture',
-            'Boucles d’amélioration courtes avec les équipes terrain'
+            'Plans d’essais pour valider le scale-up et identifier les points de rupture.',
+            'Boucles d’amélioration courtes avec les équipes terrain.'
           ]
         },
         {
           title: 'Transfert vers la production',
           points: [
-            'Dossiers de procédé et logiques de contrôle exploitables',
-            'Support au démarrage et passage de relais aux équipes exploitation'
+            'Dossiers de procédé et logiques de contrôle exploitables.',
+            'Support au démarrage et passage de relais aux équipes exploitation.'
           ]
         }
       ],
@@ -213,10 +213,10 @@ export const content: Record<Locale, Copy> = {
     role: {
       title: 'Rôle de MaxReact Engineering',
       bullets: [
-        'Interface claire entre R&D, ingénierie et production',
-        'Anticipation des risques techniques et des modes de défaillance',
-        'Approche structurée mais pragmatique, centrée sur le procédé réel',
-        'Décisions basées sur des données d’essais et des modèles simples, actionnables'
+        'Interface claire entre R&D, ingénierie et production.',
+        'Anticipation des risques techniques et des modes de défaillance.',
+        'Approche structurée mais pragmatique, centrée sur le procédé réel.',
+        'Décisions basées sur des données d’essais et des modèles simples, actionnables.'
       ],
       cardTitle: 'Un interlocuteur unique',
       coreMessageTitle: 'Message central',
@@ -225,17 +225,17 @@ export const content: Record<Locale, Copy> = {
     outcomes: {
       title: 'Résultat pour le client',
       bullets: [
-        'Procédé industrialisable avec un mode opératoire maîtrisé',
-        'Décisions techniques sécurisées (investissements, choix d’équipements, CAPEX/OPEX)',
-        'Transition laboratoire → usine pilotée et documentée',
-        'Base solide pour l’exploitation industrielle et la montée en cadence'
+        'Procédé industrialisable avec un mode opératoire maîtrisé.',
+        'Décisions techniques sécurisées (investissements, choix d’équipements, CAPEX/OPEX).',
+        'Transition laboratoire → usine pilotée et documentée.',
+        'Base solide pour l’exploitation industrielle et la montée en cadence.'
       ]
     },
     about: {
       title: 'À propos',
       body: [
         'Ingénieur chimiste avec double culture laboratoire et terrain industriel.',
-        'Plus de 10 ans à faire dialoguer équipes R&D, engineering et production pour sécuriser les procédés.',
+        'Plus de 10 ans à faire dialoguer les équipes R&D, engineering et production pour sécuriser les procédés.',
         'Culture sécurité et exploitation, orientation résultats.'
       ],
       caption: `${contactFr.name} – ${contactFr.company}`,
@@ -301,11 +301,11 @@ export const content: Record<Locale, Copy> = {
     scaleUp: {
       title: 'Why scale-up is critical',
       bullets: [
-        'Heat and mass transfer behave differently at production scale',
+        'Heat and mass transfer behave differently at production scale.',
         'Industrial equipment imposes its own limits (materials, mixing, inerting, etc.)',
-        'Safety and availability constraints reveal risks that are invisible at lab scale',
+        'Safety and availability constraints reveal risks that are invisible at lab scale.',
         'Raw-material and operating variability becomes a critical quality factor when scaling to industrial level.',
-        'Without an end-to-end view, timelines and CAPEX spiral'
+        'Without an end-to-end view, timelines and CAPEX spiral.'
       ],
       pill: 'Scale-up under control'
     },
@@ -315,29 +315,29 @@ export const content: Record<Locale, Copy> = {
         {
           title: 'Lab process',
           points: [
-            'Clarify reaction scheme and critical parameters',
-            'Mass and energy balances to prepare sizing decisions'
+            'Clarify reaction scheme and critical parameters.',
+            'Mass and energy balances to prepare sizing decisions.'
           ]
         },
         {
           title: 'Industrial constraints',
           points: [
-            'Select realistic equipment (agitation, heat transfer, process safety)',
-            'Robustness against raw material variability and operational drifts'
+            'Select realistic equipment (agitation, heat transfer, process safety).',
+            'Robustness against raw material variability and operational drifts.'
           ]
         },
         {
           title: 'Pilot / pre-industrial',
           points: [
-            'Test plans to validate scale-up and expose failure modes',
-            'Short learning loops with on-site teams'
+            'Test plans to validate scale-up and expose failure modes.',
+            'Short learning loops with on-site teams.'
           ]
         },
         {
           title: 'Transfer to production',
           points: [
-            'Process dossiers and control logics ready for the shop floor',
-            'Start-up support and handover to operations'
+            'Process dossiers and control logics ready for the shop floor.',
+            'Start-up support and handover to operations.'
           ]
         }
       ],
@@ -346,10 +346,10 @@ export const content: Record<Locale, Copy> = {
     role: {
       title: 'Role of MaxReact Engineering',
       bullets: [
-        'Clear interface across R&D, engineering and production',
-        'Anticipates technical risks and failure modes early',
-        'Structured yet pragmatic approach, anchored in the real process',
-        'Decisions backed by test data and simple, actionable models'
+        'Clear interface across R&D, engineering and production.',
+        'Anticipates technical risks and failure modes early.',
+        'Structured yet pragmatic approach, anchored in the real process.',
+        'Decisions backed by test data and simple, actionable models.'
       ],
       cardTitle: 'One accountable interface',
       coreMessageTitle: 'Core message',
@@ -358,17 +358,17 @@ export const content: Record<Locale, Copy> = {
     outcomes: {
       title: 'Outcome for you',
       bullets: [
-        'An industrialisable process with a controlled operating envelope',
-        'Safer technical decisions (equipment choices, CAPEX/OPEX impacts)',
-        'Managed lab → plant transition with documented learnings',
-        'Solid basis for reliable production and future ramp-up'
+        'An industrialisable process with a controlled operating envelope.',
+        'Safer technical decisions (equipment choices, CAPEX/OPEX impacts).',
+        'Managed lab → plant transition with documented learnings.',
+        'Solid basis for reliable production and future ramp-up.'
       ]
     },
     about: {
       title: 'About',
       body: [
         'Chemical engineer with a dual lab and plant mindset.',
-        '10+ years translating between R&D, engineering and operations to secure processes.',
+        'More than 10 years of experience acting as an interface between R&D, engineering, and operations to ensure process robustness and reliability.',
         'Safety-first and operations-focused, with a bias to tangible results.'
       ],
       caption: `${contactEn.name} – ${contactEn.company}`,
