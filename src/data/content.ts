@@ -234,7 +234,7 @@ export const content: Record<Locale, Copy> = {
     about: {
       title: 'À propos',
       body: [
-        'Ingénieur chimiste avec double culture laboratoire et terrain industriel.',
+        'Ingénieur chimiste et PhD en chimie, spécialisé dans le passage du laboratoire à l’échelle industrielle.',
         'Plus de 10 ans à faire dialoguer les équipes R&D, engineering et production pour sécuriser les procédés.',
         'Culture sécurité et exploitation, orientation résultats.'
       ],
@@ -367,7 +367,7 @@ export const content: Record<Locale, Copy> = {
     about: {
       title: 'About',
       body: [
-        'Chemical engineer with a dual lab and plant mindset.',
+        'Chemical Engineer and PhD in Chemistry, specialised in bridging laboratory development and industrial scale-up.',
         'More than 10 years of experience acting as an interface between R&D, engineering, and operations to ensure process robustness and reliability.',
         'Safety-first and operations-focused, with a bias to tangible results.'
       ],
